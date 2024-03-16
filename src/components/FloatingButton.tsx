@@ -1,4 +1,4 @@
-import { Fab } from "@mui/material";
+import { Fab, Tooltip } from "@mui/material";
 import React from "react";
 import DownloadForOfflineIcon from "@mui/icons-material/DownloadForOffline";
 
@@ -19,10 +19,12 @@ class FloatingButton extends React.Component {
         style={{
           position: "fixed",
           bottom: "20px",
-          right: "20px",
+          left: "50%",
+          transform: "translateX(-50%)",
           zIndex: "1000",
         }}
       >
+        <Tooltip title="Shubham's Resume" arrow>
         <Fab
           style={{ background: "#7c2bbf" }}
           aria-label="download"
@@ -30,6 +32,7 @@ class FloatingButton extends React.Component {
         >
           <DownloadForOfflineIcon sx={{ color: "white" }} fontSize="large" />
         </Fab>
+        </Tooltip>
       </div>
     );
   }

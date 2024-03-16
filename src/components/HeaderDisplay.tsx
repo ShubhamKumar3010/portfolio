@@ -5,6 +5,8 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { useState } from "react";
 import { TypeAnimation } from "react-type-animation";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 type HeaderDisplayProps = {
   name: string;
@@ -23,24 +25,27 @@ const HeaderDisplay: React.FC<HeaderDisplayProps> = ({
   const [mailHovered, setMailHovered] = useState<boolean>(false);
   const [linkedinHovered, setLinkedinHovered] = useState<boolean>(false);
   const [githubHovered, setGithubHovered] = useState<boolean>(false);
+  const theme = useTheme();
+  const isMobileView = useMediaQuery(theme.breakpoints.down("sm" || "md"));
 
   return (
     <>
       <Grid
         container
         display={"flex"}
-        flexDirection="row"
-        height="600px"
+        flexDirection={isMobileView ? "column" : "row"}
+        height={isMobileView ? "" : "600px"}
         flexGrow={1}
         alignItems="center"
       >
         <Grid
+          padding={isMobileView ? "30px" : "15px"}
           item={true}
           xs={6}
           display={"flex"}
           flexDirection="column"
-          fontSize="70px"
-          width="50%"
+          fontSize={isMobileView ? "20px" : "50px"}
+          width={isMobileView ? "100%" : "50%"}
         >
           <Grid>
             <TypeAnimation
@@ -50,7 +55,7 @@ const HeaderDisplay: React.FC<HeaderDisplayProps> = ({
                 `Hi, I'am ${name}`,
               ]}
               wrapper="span"
-              speed={10}
+              speed={30}
             />
           </Grid>
           <Grid>
@@ -63,8 +68,8 @@ const HeaderDisplay: React.FC<HeaderDisplayProps> = ({
               sx={{
                 color: mailHovered ? "#514F4F" : "#cccccc",
                 cursor: mailHovered ? "pointer" : "",
-                height: "60px",
-                width: "60px",
+                height: isMobileView ? "20px" : "40px",
+                width: isMobileView ? "20px" : "40px",
                 transition: "color 0.3s",
                 "&:hover": {
                   transform: "scale(1.5)",
@@ -82,8 +87,8 @@ const HeaderDisplay: React.FC<HeaderDisplayProps> = ({
               sx={{
                 color: linkedinHovered ? "#514F4F" : "#cccccc",
                 cursor: linkedinHovered ? "pointer" : "",
-                height: "60px",
-                width: "60px",
+                height: isMobileView ? "20px" : "40px",
+                width: isMobileView ? "20px" : "40px",
                 transition: "color 0.3s",
                 "&:hover": {
                   transform: "scale(1.5)",
@@ -101,8 +106,8 @@ const HeaderDisplay: React.FC<HeaderDisplayProps> = ({
               sx={{
                 color: githubHovered ? "#514F4F" : "#cccccc",
                 cursor: githubHovered ? "pointer" : "",
-                height: "60px",
-                width: "60px",
+                height: isMobileView ? "20px" : "40px",
+                width: isMobileView ? "20px" : "40px",
                 transition: "color 0.3s",
                 "&:hover": {
                   transform: "scale(1.5)",
@@ -118,8 +123,13 @@ const HeaderDisplay: React.FC<HeaderDisplayProps> = ({
           </Grid>
         </Grid>
 
-        <Grid item={true} xs={6} width="50%">
-          <img src={HomeLogo} height="300px" width="400px" alt="home-logo" />
+        <Grid item={true} xs={6} width={isMobileView ? "100%" : "50%"}>
+          <img
+            src={HomeLogo}
+            height={isMobileView ? "150px" : "300px"}
+            width={isMobileView ? "250px" : "400px"}
+            alt="home-logo"
+          />
         </Grid>
       </Grid>
     </>
