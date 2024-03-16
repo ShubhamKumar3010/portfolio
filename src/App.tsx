@@ -1,25 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import "./App.css";
+import HeaderDisplay from "./components/HeaderDisplay";
+import FloatingButton from "./components/FloatingButton";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="App">
+        <header className="App-header">
+          <HeaderDisplay
+            name="Shubham"
+            designation="Software Developer"
+            emailId="shubham8969305655@gmail.com"
+            linkedinURL="https://www.linkedin.com/in/shubham-kumar-6aa852171/"
+            githubURL="https://github.com/ShubhamKumar3010"
+          />
+        </header>
+        <FloatingButton />
+      </div>
+    </>
   );
 }
 
