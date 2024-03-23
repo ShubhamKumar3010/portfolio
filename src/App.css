@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  padding: 10px;
+  background: #001220;
 }
 
 .App-logo {
@@ -17,7 +19,6 @@
   background-color: white;
   min-height: 100vh;
   display: flex;
-  width: 100vw;
   flex-direction: column;
   justify-content: center;
   font-size: calc(10px + 2vmin);
@@ -27,6 +28,29 @@
 .App-link {
   color: #61dafb;
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #001220;
+  height: 30px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #7c2bbf;
+  height: 30px;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 
 @keyframes App-logo-spin {
   from {

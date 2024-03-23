@@ -34,9 +34,9 @@ const HeaderDisplay: React.FC<HeaderDisplayProps> = ({
         container
         display={"flex"}
         flexDirection={isMobileView ? "column" : "row"}
-        height={isMobileView ? "" : "600px"}
         flexGrow={1}
         alignItems="center"
+        sx={{ background: "#001220" }}
       >
         <Grid
           padding={isMobileView ? "30px" : "15px"}
@@ -45,14 +45,13 @@ const HeaderDisplay: React.FC<HeaderDisplayProps> = ({
           display={"flex"}
           flexDirection="column"
           fontSize={isMobileView ? "20px" : "50px"}
-          width={isMobileView ? "100%" : "50%"}
         >
           <Grid>
             <TypeAnimation
               sequence={[
-                `Hi, I'am ${name}`,
+                `Hello, I'am ${name}`,
                 "Nice To Meet  You..",
-                `Hi, I'am ${name}`,
+                `Hello, I'am ${name}`,
               ]}
               wrapper="span"
               speed={30}
@@ -123,11 +122,11 @@ const HeaderDisplay: React.FC<HeaderDisplayProps> = ({
           </Grid>
         </Grid>
 
-        <Grid item={true} xs={6} width={isMobileView ? "100%" : "50%"}>
+        <Grid item={true} xs={6}>
           <img
             src={HomeLogo}
-            height={isMobileView ? "150px" : "300px"}
-            width={isMobileView ? "250px" : "400px"}
+            height={isMobileView ? "150px" : "200px"}
+            width={isMobileView ? "250px" : "300px"}
             alt="home-logo"
           />
         </Grid>

@@ -2,11 +2,15 @@ import * as React from "react";
 import "./App.css";
 import HeaderDisplay from "./components/HeaderDisplay";
 import FloatingButton from "./components/FloatingButton";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <>
       <div className="App">
+        <nav className="App-navbar">
+          <Navbar />
+        </nav>
         <header className="App-header">
           <HeaderDisplay
             name="Shubham"

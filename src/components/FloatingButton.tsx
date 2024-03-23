@@ -19,12 +19,11 @@ class FloatingButton extends React.Component {
         style={{
           position: "fixed",
           bottom: "20px",
-          left: "50%",
-          transform: "translateX(-50%)",
+          right: "20px",
           zIndex: "1000",
         }}
       >
-        <Tooltip title="Shubham's Resume" arrow>
+        <Tooltip placement="left" title="Shubham's Resume" arrow>
         <Fab
           style={{ background: "#7c2bbf" }}
           aria-label="download"
