@@ -36,7 +36,8 @@ const HeaderDisplay: React.FC<HeaderDisplayProps> = ({
         flexDirection={isMobileView ? "column" : "row"}
         flexGrow={1}
         alignItems="center"
-        sx={{ background: "#001220" }}
+        justifyContent="center"
+        sx={{ background: "#001220"}}
       >
         <Grid
           padding={isMobileView ? "30px" : "15px"}

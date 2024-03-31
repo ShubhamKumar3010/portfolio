@@ -3,8 +3,13 @@ import "./App.css";
 import HeaderDisplay from "./components/HeaderDisplay";
 import FloatingButton from "./components/FloatingButton";
 import Navbar from "./components/Navbar";
+import Skill from "./components/Skill";
+import About from "./components/About";
+import { useMediaQuery, useTheme } from "@mui/material";
 
 function App() {
+  const theme = useTheme();
+  const isMobileView = useMediaQuery(theme.breakpoints.down("sm" || "md"));
   return (
     <>
       <div className="App">
@@ -20,6 +25,19 @@ function App() {
             githubURL="https://github.com/ShubhamKumar3010"
           />
         </header>
+        <section
+          style={{
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <section>
+            <About />
+          </section>
+          <section>
+            <Skill />
+          </section>
+        </section>
         <FloatingButton />
       </div>
     </>

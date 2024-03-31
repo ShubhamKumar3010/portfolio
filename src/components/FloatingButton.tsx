@@ -24,13 +24,13 @@ class FloatingButton extends React.Component {
         }}
       >
         <Tooltip placement="left" title="Shubham's Resume" arrow>
-        <Fab
-          style={{ background: "#7c2bbf" }}
-          aria-label="download"
-          onClick={this.handleDownload}
-        >
-          <DownloadForOfflineIcon sx={{ color: "white" }} fontSize="large" />
-        </Fab>
+          <Fab
+            style={{ background: "#7c2bbf" }}
+            aria-label="download"
+            onClick={this.handleDownload}
+          >
+            <DownloadForOfflineIcon sx={{ color: "white" }} fontSize="large" />
+          </Fab>
         </Tooltip>
       </div>
     );

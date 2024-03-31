@@ -23,20 +23,13 @@ function Navbar() {
           alignItems: "center",
           justifyContent: "center",
           display: "flex",
+          color: "white",
         }}
       >
-        <Typography sx={{ color: "white",fontWeight:"" }}>
-          <h1><b>S</b>hubham Kumar</h1>
-        </Typography>
+        <h1>
+          <b>S</b>hubham Kumar
+        </h1>
       </Box>
-      <div>
-        {/* <Typography variant="h1" fontFamily="Arial">Arial Font</Typography>
-      <Typography variant="h2" fontFamily="Times New Roman">Times New Roman Font</Typography>
-      <Typography variant="h3" fontFamily="Courier New">Courier New Font</Typography>
-      <Typography variant="h4" fontFamily="Georgia">Georgia Font</Typography>
-      <Typography variant="h5" fontFamily="Verdana">Verdana Font</Typography>
-      <Typography variant="h6" fontFamily="Comic Sans MS">Comic Sans MS Font</Typography> */}
-      </div>
       <Box
         sx={{
           flexGrow: 1,
