@@ -12,8 +12,8 @@ const About = () => {
         src={ProfilePic}
         alt="shubham-img"
         style={{
-          height: isMobileView ? "200px" : "300px",
-          width: isMobileView ? "200px" : "300px",
+          height: isMobileView ? "250px" : "300px",
+          width: isMobileView ? "250px" : "300px",
         }}
       />
       <div
