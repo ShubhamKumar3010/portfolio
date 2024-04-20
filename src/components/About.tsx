@@ -15,7 +15,7 @@ const About = () => {
           flexDirection: isMobileView ? "column" : "row",
           justifyContent: "center",
           alignItems: "center",
-          gap: isMobileView ? "50px": "150px",
+          gap: isMobileView ? "50px": "10px",
         }}
       >
         <img

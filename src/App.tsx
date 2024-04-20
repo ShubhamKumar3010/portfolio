@@ -6,6 +6,8 @@ import Navbar from "./components/Navbar";
 import Skill from "./components/Skill";
 import About from "./components/About";
 import { useMediaQuery, useTheme } from "@mui/material";
+import ExperienceCard from "./components/ExperienceCard";
+import ProjectCard from "./components/ProjectCard";
 
 function App() {
   const theme = useTheme();
@@ -36,6 +38,12 @@ function App() {
           </section>
           <section>
             <Skill />
+          </section>
+          <section>
+            <ExperienceCard />
+          </section>
+          <section>
+            <ProjectCard />
           </section>
         </section>
         <FloatingButton />

@@ -35,13 +35,13 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #001220;
+  background: white;
   height: 30px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #514F4F;
+  background: #9858cd;
   height: 30px;
   border-radius: 5px;
 }
