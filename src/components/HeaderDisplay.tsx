@@ -45,7 +45,7 @@ const HeaderDisplay: React.FC<HeaderDisplayProps> = ({
           xs={6}
           display={"flex"}
           flexDirection="column"
-          fontSize={isMobileView ? "20px" : "50px"}
+          fontSize={isMobileView ? "25px" : "50px"}
         >
           <Grid>
             <TypeAnimation
