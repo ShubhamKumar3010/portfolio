@@ -1,12 +1,6 @@
 import { Grid, useMediaQuery, useTheme } from "@mui/material";
 import React from "react";
-import AspectRatio from "@mui/joy/AspectRatio";
-import Button from "@mui/joy/Button";
-import Card from "@mui/joy/Card";
-import CardActions from "@mui/joy/CardActions";
-import CardContent from "@mui/joy/CardContent";
-import CardOverflow from "@mui/joy/CardOverflow";
-import Typography from "@mui/joy/Typography";
+import Project from "./Project";
 
 const ProjectCard: React.FC = () => {
   const theme = useTheme();
@@ -30,7 +24,12 @@ const ProjectCard: React.FC = () => {
           marginRight: "auto",
           maxWidth: "fit-content",
         }}
-      ></div>
+      >
+        <Project
+          projectName="Smart Gaya"
+          projectDesc="This app provides a platform for the local Gayawis where they can get access to the daily need services such as the contact details of Plumbers, Electricians, AC mechanics, etc. The services of the Smart Gaya App don't stop there. It also brings you an online ration store from where you can order daily groceries and get the delivery at your doorsteps."
+        />
+      </div>
     </>
   );
 };
