@@ -1,31 +1,58 @@
 import { Grid, useMediaQuery, useTheme } from "@mui/material";
 import ProfilePic from "../assets/profile-pic.png";
+import RowCard from "./RowCard";
 
 const About = () => {
   const theme = useTheme();
   const isMobileView = useMediaQuery(theme.breakpoints.down("sm" || "md"));
   const aboutDesc =
-    "Currently, I am working as a software developer at Infosys, specializing as a Specialist Programmer. I completed my B.Tech in Computer Science in 2022 from JECRC University, Jaipur. I enjoy identifying problems around me that can be solved with software and love working on innovative ideas. My hobbies include watching and playing football, listening to music, and traveling.";
+    "Currently, I am working as a software developer at Infosys, specializing as a Specialist Programmer. I completed my B.Tech in Computer Science from JECRC University, Jaipur. I enjoy identifying problems around me that can be solved with softwares and love working on innovative ideas. My hobbies include watching and playing football, listening to music, and traveling.";
   return (
-    <Grid padding="15px" marginBottom="35px">
-      <img
-        src={ProfilePic}
-        alt="shubham-img"
+    <Grid padding="15px" marginBottom="35px" gap="10px">
+      <div
         style={{
-          height: isMobileView ? "250px" : "300px",
-          width: isMobileView ? "250px" : "300px",
+          display: "flex",
+          flexDirection: isMobileView ? "column" : "row",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: isMobileView ? "50px": "150px",
         }}
-      />
+      >
+        <img
+          src={ProfilePic}
+          alt="shubham-img"
+          style={{
+            height: isMobileView ? "250px" : "300px",
+            width: isMobileView ? "250px" : "300px",
+          }}
+        />
+        <RowCard
+          cardType="Exp."
+          line1Content="1.9 Years"
+          line2Content="Software Developer"
+        />
+        <RowCard
+          cardType="Educ."
+          line1Content="2018-2022"
+          line2Content="Btech-CSE"
+        />
+      </div>
       <div
         style={{
           fontSize: isMobileView ? "25px" : "60px",
           color: "#514F4F",
+          marginTop: "20px",
           marginBottom: "20px",
         }}
       >
         About <b>Me</b>
       </div>
-      <div style={{ fontSize: isMobileView ? "15px" : "25px", color: "white", padding: "5px" }}>
+      <div
+        style={{
+          fontSize: isMobileView ? "16px" : "25px",
+          padding: "5px",
+        }}
+      >
         {aboutDesc}
       </div>
     </Grid>

@@ -8,15 +8,15 @@ import React from "react";
 
 const Skill = () => {
   const chipStyle = {
-    color: "white",
-    background: "rgba(76, 76, 76, 0.36)",
+    color: "black",
+    border: "solid 2px black",
     margin: "10px",
     padding: "2px",
   };
   const theme = useTheme();
   const isMobileView = useMediaQuery(theme.breakpoints.down("sm" || "md"));
   return (
-    <Grid padding="15px" marginBottom="35px">
+    <Grid paddingX={isMobileView?"10px": "250px"} marginBottom="35px">
       <div
         style={{
           fontSize: isMobileView ? "25px" : "60px",

@@ -37,7 +37,6 @@ const HeaderDisplay: React.FC<HeaderDisplayProps> = ({
         flexGrow={1}
         alignItems="center"
         justifyContent="center"
-        sx={{ background: "#001220"}}
       >
         <Grid
           padding={isMobileView ? "30px" : "15px"}
@@ -66,7 +65,7 @@ const HeaderDisplay: React.FC<HeaderDisplayProps> = ({
           <Grid>
             <EmailIcon
               sx={{
-                color: mailHovered ? "#514F4F" : "#cccccc",
+                color: mailHovered ? "#000" : "#514F4F",
                 cursor: mailHovered ? "pointer" : "",
                 height: isMobileView ? "20px" : "40px",
                 width: isMobileView ? "20px" : "40px",
@@ -85,7 +84,7 @@ const HeaderDisplay: React.FC<HeaderDisplayProps> = ({
             <LinkedInIcon
               fontSize="large"
               sx={{
-                color: linkedinHovered ? "#514F4F" : "#cccccc",
+                color: linkedinHovered ? "#000" : "#514F4F",
                 cursor: linkedinHovered ? "pointer" : "",
                 height: isMobileView ? "20px" : "40px",
                 width: isMobileView ? "20px" : "40px",
@@ -104,7 +103,7 @@ const HeaderDisplay: React.FC<HeaderDisplayProps> = ({
             <GitHubIcon
               fontSize="large"
               sx={{
-                color: githubHovered ? "#514F4F" : "#cccccc",
+                color: githubHovered ? "#000" : "#514F4F",
                 cursor: githubHovered ? "pointer" : "",
                 height: isMobileView ? "20px" : "40px",
                 width: isMobileView ? "20px" : "40px",
