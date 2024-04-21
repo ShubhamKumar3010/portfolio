@@ -36,6 +36,7 @@ const HeaderDisplay: React.FC<HeaderDisplayProps> = ({
         flexGrow={1}
         alignItems="center"
         justifyContent="center"
+        marginTop="70px"
       >
         <Grid
           padding={isMobileView ? "30px" : "15px"}

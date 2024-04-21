@@ -40,7 +40,7 @@ const Gallery: React.FC = () => {
                     src={`${item}?w=248&fit=crop&auto=format`}
                     alt={item + "_gallery"}
                     loading="lazy"
-                    style={{ borderRadius: "20px" }}
+                    style={{ borderRadius: "10px" }}
                   />
                 </ImageListItem>
               ))}

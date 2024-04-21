@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .App-logo {
@@ -39,7 +40,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #9858cd;
+  background: #514f4f;
   height: 30px;
   border-radius: 5px;
 }

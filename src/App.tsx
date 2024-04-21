@@ -9,6 +9,7 @@ import ExperienceCard from "./components/ExperienceCard";
 import ProjectCard from "./components/ProjectCard";
 import Gallery from "./components/Gallery";
 import Achievements from "./components/Achievement";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -51,6 +52,9 @@ function App() {
             <Achievements />
           </section>
         </section>
+        <footer>
+          <Footer />
+        </footer>
         <FloatingButton />
       </div>
     </>
