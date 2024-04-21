@@ -2,17 +2,23 @@ import * as React from "react";
 import Box from "@mui/joy/Box";
 import IconButton from "@mui/joy/IconButton";
 import Drawer from "@mui/joy/Drawer";
-import Input from "@mui/joy/Input";
 import List from "@mui/joy/List";
 import ListItemButton from "@mui/joy/ListItemButton";
-import Typography from "@mui/joy/Typography";
 import ModalClose from "@mui/joy/ModalClose";
 import Menu from "@mui/icons-material/Menu";
-import Search from "@mui/icons-material/Search";
+import useStore from "../store/store";
 
 export default function DrawerTab() {
   const [open, setOpen] = React.useState(false);
+  const { about } = useStore();
 
+  const moveToSection = (sectionRef: React.MutableRefObject<any>) => {
+    sectionRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleAboutClick = () => {
+    moveToSection(about);
+  };
   return (
     <React.Fragment>
       <IconButton
@@ -45,7 +51,14 @@ export default function DrawerTab() {
           }}
         >
           <ListItemButton sx={{ fontWeight: "lg" }}>Home</ListItemButton>
-          <ListItemButton>About Me</ListItemButton>
+          <ListItemButton
+            onClick={() => {
+              handleAboutClick();
+              setOpen(false);
+            }}
+          >
+            About Me
+          </ListItemButton>
           <ListItemButton>Technical Skills</ListItemButton>
           <ListItemButton>Work Experience</ListItemButton>
           <ListItemButton>College Projects</ListItemButton>

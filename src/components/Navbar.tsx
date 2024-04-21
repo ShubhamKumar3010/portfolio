@@ -2,10 +2,19 @@ import "./Navbar.css";
 import Avatar from "@mui/material/Avatar";
 import { Chip, useMediaQuery, useTheme } from "@mui/material";
 import DrawerTab from "./DrawerTab";
-
+import useStore from "../store/store";
 function Navbar() {
   const theme = useTheme();
   const isMobileView = useMediaQuery(theme.breakpoints.down("sm" || "md"));
+  const { about } = useStore();
+
+  const moveToSection = (sectionRef: React.MutableRefObject<any>) => {
+    sectionRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleAboutClick = () => {
+    moveToSection(about);
+  };
 
   return (
     <>
@@ -25,7 +34,9 @@ function Navbar() {
           />
           <ul className="main-menu">
             <li>
-              <a href="#">About Me</a>
+              <a href="#" onClick={handleAboutClick}>
+                About Me
+              </a>
             </li>
             <li>
               <a href="#">Technical Skills</a>
@@ -45,9 +56,7 @@ function Navbar() {
           </ul>
 
           <ul className="right-menu">
-            <li>
-              {isMobileView ? <DrawerTab /> : <></>}
-            </li>
+            <li>{isMobileView ? <DrawerTab /> : <></>}</li>
           </ul>
         </nav>
       </div>

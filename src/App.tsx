@@ -10,8 +10,39 @@ import ProjectCard from "./components/ProjectCard";
 import Gallery from "./components/Gallery";
 import Achievements from "./components/Achievement";
 import Footer from "./components/Footer";
+import useStore from "./store/store";
 
 function App() {
+  const {
+    about,
+    tech,
+    work,
+    project,
+    gallery,
+    achievements,
+    setAbout,
+    setTech,
+    setWork,
+    setProject,
+    setGallery,
+    setAchievements,
+  } = useStore();
+
+  // Function to move to a specific section
+  // const moveToSection = (sectionRef) => {
+  //   sectionRef.current.scrollIntoView({ behavior: "smooth" });
+  // };
+
+  // Example: Move to the 'About' section
+  // const handleAboutClick = () => {
+  //   moveToSection(aboutRef);
+  // };
+
+  // Example: Move to the 'Tech' section
+  // const handleTechClick = () => {
+  //   moveToSection(techRef);
+  // };
+
   return (
     <>
       <div className="App">
@@ -33,22 +64,22 @@ function App() {
             flexDirection: "column",
           }}
         >
-          <section>
+          <section ref={about}>
             <About />
           </section>
-          <section>
+          <section ref={tech}>
             <Skill />
           </section>
-          <section>
+          <section ref={work}>
             <ExperienceCard />
           </section>
-          <section>
+          <section ref={project}>
             <ProjectCard />
           </section>
-          <section>
+          <section ref={gallery}>
             <Gallery />
           </section>
-          <section>
+          <section ref={achievements}>
             <Achievements />
           </section>
         </section>
