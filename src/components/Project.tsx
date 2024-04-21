@@ -1,22 +1,42 @@
 import React from "react";
 import "./Project.css";
+import { useMediaQuery, useTheme } from "@mui/material";
 import Button from "@mui/joy/Button";
-import smargGayaGif from "../assets/smartGaya.gif";
+import smargGaya from "../assets/smartGaya5.jpg";
+import matangi from "../assets/matangi.png";
+import hotelMb from "../assets/hotelMb.png";
 
 type ProjectProps = {
   projectName: string;
   projectDesc: string;
+  projectDate: string;
 };
-const Project: React.FC<ProjectProps> = ({ projectName, projectDesc }) => {
+const Project: React.FC<ProjectProps> = ({
+  projectName,
+  projectDesc,
+  projectDate,
+}) => {
+  const theme = useTheme();
+  const isMobileView = useMediaQuery(theme.breakpoints.down("sm" || "md"));
   return (
     <div className="project-card-sm">
       <div className="card-border-gradient"></div>
       <div className="card-container">
-        <img src={smargGayaGif} alt="" />
+        <img
+          src={
+            projectName === "Smart Gaya (Android Project)"
+              ? smargGaya
+              : projectName === "Matangi (Android Project)"
+              ? matangi
+              : hotelMb
+          }
+          alt=""
+        />
         <div className="wrapper">
-          <h1>{projectName}</h1>
-          <p>{projectDesc}</p>
-
+          <div>
+            <h1>{projectName}</h1> <h5> {projectDate}</h5>
+            <p>{projectDesc}</p>
+          </div>
           <Button
             variant="solid"
             sx={{ color: "white", background: "#7c2bbf" }}
@@ -26,7 +46,9 @@ const Project: React.FC<ProjectProps> = ({ projectName, projectDesc }) => {
                 "_blank"
               );
             }}
-            disabled={projectName === "Smart Gaya" ? false : true}
+            disabled={
+              projectName === "Smart Gaya (Android Project)" ? false : true
+            }
           >
             View Project
           </Button>

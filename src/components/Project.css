@@ -10,7 +10,7 @@
     max-width: 500px;
     padding: 2.5px;
     border-radius: 15px;
-    border: 1px solid #7c2bbf;
+    border: 2px solid #7c2bbf;
     background-color: rgba(255, 255, 255, 0.15);
     position: relative;
     overflow: hidden;
@@ -19,6 +19,7 @@
     justify-content: center;
     align-items: center;
     transition: transform 0.4s, box-shadow 0.4s;
+    height: fit-content;
 }
 
 .project-card-sm:hover {
@@ -61,7 +62,7 @@
     gap: 1rem;
     padding: 0.75rem;
     border-radius: 12px;
-    background-color: #ebebeb;
+    background-color: #fff;
     color: black;
 }
 

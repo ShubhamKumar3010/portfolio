@@ -12,6 +12,7 @@ import ProjectCard from "./components/ProjectCard";
 function App() {
   const theme = useTheme();
   const isMobileView = useMediaQuery(theme.breakpoints.down("sm" || "md"));
+  
   return (
     <>
       <div className="App">
