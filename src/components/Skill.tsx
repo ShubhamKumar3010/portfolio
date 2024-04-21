@@ -4,7 +4,6 @@ import JavascriptIcon from "@mui/icons-material/Javascript";
 import CssIcon from "@mui/icons-material/Css";
 import DataObjectIcon from "@mui/icons-material/DataObject";
 import HtmlIcon from "@mui/icons-material/Html";
-import React from "react";
 
 const Skill = () => {
   const chipStyle = {
@@ -16,7 +15,7 @@ const Skill = () => {
   const theme = useTheme();
   const isMobileView = useMediaQuery(theme.breakpoints.down("sm" || "md"));
   return (
-    <Grid paddingX={isMobileView?"10px": "250px"} marginBottom="35px">
+    <Grid paddingX={isMobileView ? "10px" : "250px"} marginBottom="35px">
       <div
         style={{
           fontSize: isMobileView ? "25px" : "60px",

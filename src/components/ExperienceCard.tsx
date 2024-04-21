@@ -38,7 +38,7 @@ const ExperienceCard: React.FC = () => {
             }}
             style={{
               width: "300px",
-              borderColor: "#0271b1"
+              borderColor: "#0271b1",
             }}
           >
             <CardOverflow
@@ -86,7 +86,7 @@ const ExperienceCard: React.FC = () => {
             >
               <Button
                 variant="solid"
-                sx={{color:"white"}}
+                sx={{ color: "white" }}
                 onClick={() => {
                   window.open(
                     "https://www.linkedin.com/company/infosys/",

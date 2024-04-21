@@ -48,6 +48,7 @@ const ProjectCard: React.FC = () => {
             flexDirection: !isMobileView ? "row" : "column",
             gap: 50,
             alignItems: "center",
+            marginBottom: "30px",
           }}
         >
           <Project

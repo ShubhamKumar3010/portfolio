@@ -17,7 +17,6 @@ type HeaderDisplayProps = {
 };
 const HeaderDisplay: React.FC<HeaderDisplayProps> = ({
   name,
-  designation,
   emailId,
   linkedinURL,
   githubURL,

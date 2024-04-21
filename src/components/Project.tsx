@@ -1,6 +1,5 @@
 import React from "react";
 import "./Project.css";
-import { useMediaQuery, useTheme } from "@mui/material";
 import Button from "@mui/joy/Button";
 import smargGaya from "../assets/smartGaya5.jpg";
 import matangi from "../assets/matangi.png";
@@ -16,8 +15,6 @@ const Project: React.FC<ProjectProps> = ({
   projectDesc,
   projectDate,
 }) => {
-  const theme = useTheme();
-  const isMobileView = useMediaQuery(theme.breakpoints.down("sm" || "md"));
   return (
     <div className="project-card-sm">
       <div className="card-border-gradient"></div>

@@ -5,14 +5,12 @@ import FloatingButton from "./components/FloatingButton";
 import Navbar from "./components/Navbar";
 import Skill from "./components/Skill";
 import About from "./components/About";
-import { useMediaQuery, useTheme } from "@mui/material";
 import ExperienceCard from "./components/ExperienceCard";
 import ProjectCard from "./components/ProjectCard";
+import Gallery from "./components/Gallery";
+import Achievements from "./components/Achievement";
 
 function App() {
-  const theme = useTheme();
-  const isMobileView = useMediaQuery(theme.breakpoints.down("sm" || "md"));
-  
   return (
     <>
       <div className="App">
@@ -45,6 +43,12 @@ function App() {
           </section>
           <section>
             <ProjectCard />
+          </section>
+          <section>
+            <Gallery />
+          </section>
+          <section>
+            <Achievements />
           </section>
         </section>
         <FloatingButton />
