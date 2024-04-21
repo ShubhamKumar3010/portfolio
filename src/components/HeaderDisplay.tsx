@@ -66,8 +66,8 @@ const HeaderDisplay: React.FC<HeaderDisplayProps> = ({
               sx={{
                 color: mailHovered ? "#000" : "#514F4F",
                 cursor: mailHovered ? "pointer" : "",
-                height: isMobileView ? "20px" : "40px",
-                width: isMobileView ? "20px" : "40px",
+                height: isMobileView ? "50px" : "100px",
+                width: isMobileView ? "50px" : "100px",
                 transition: "color 0.3s",
                 "&:hover": {
                   transform: "scale(1.5)",
@@ -85,8 +85,8 @@ const HeaderDisplay: React.FC<HeaderDisplayProps> = ({
               sx={{
                 color: linkedinHovered ? "#000" : "#514F4F",
                 cursor: linkedinHovered ? "pointer" : "",
-                height: isMobileView ? "20px" : "40px",
-                width: isMobileView ? "20px" : "40px",
+                height: isMobileView ? "50px" : "100px",
+                width: isMobileView ? "50px" : "100px",
                 transition: "color 0.3s",
                 "&:hover": {
                   transform: "scale(1.5)",
@@ -104,8 +104,8 @@ const HeaderDisplay: React.FC<HeaderDisplayProps> = ({
               sx={{
                 color: githubHovered ? "#000" : "#514F4F",
                 cursor: githubHovered ? "pointer" : "",
-                height: isMobileView ? "20px" : "40px",
-                width: isMobileView ? "20px" : "40px",
+                height: isMobileView ? "50px" : "100px",
+                width: isMobileView ? "50px" : "100px",
                 transition: "color 0.3s",
                 "&:hover": {
                   transform: "scale(1.5)",

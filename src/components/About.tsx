@@ -11,6 +11,24 @@ const About = () => {
     <Grid padding="15px" marginBottom="35px" gap="10px">
       <div
         style={{
+          fontSize: isMobileView ? "25px" : "60px",
+          color: "#514F4F",
+          marginBottom: "20px",
+        }}
+      >
+        About <b>Me</b>
+      </div>
+      <div
+        style={{
+          fontSize: isMobileView ? "16px" : "25px",
+          padding: "5px",
+          marginBottom: "80px",
+        }}
+      >
+        {aboutDesc}
+      </div>
+      <div
+        style={{
           display: "flex",
           flexDirection: isMobileView ? "column" : "row",
           justifyContent: "center",
@@ -36,24 +54,6 @@ const About = () => {
           line1Content="2018-2022"
           line2Content="Btech-CSE"
         />
-      </div>
-      <div
-        style={{
-          fontSize: isMobileView ? "25px" : "60px",
-          color: "#514F4F",
-          marginTop: "20px",
-          marginBottom: "20px",
-        }}
-      >
-        About <b>Me</b>
-      </div>
-      <div
-        style={{
-          fontSize: isMobileView ? "16px" : "25px",
-          padding: "5px",
-        }}
-      >
-        {aboutDesc}
       </div>
     </Grid>
   );

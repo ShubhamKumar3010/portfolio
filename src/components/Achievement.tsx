@@ -9,7 +9,7 @@ const Achievements: React.FC = () => {
     <>
       <Grid
         paddingX={isMobileView ? "10px" : "250px"}
-        marginBottom="35px"
+        marginBottom="100px"
         display={"flex"}
         flexDirection={"column"}
         alignItems={"center"}
