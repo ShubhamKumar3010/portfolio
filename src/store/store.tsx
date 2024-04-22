@@ -1,6 +1,7 @@
 import create from "zustand";
 
 interface StoreState {
+  home: React.MutableRefObject<any>;
   about: React.MutableRefObject<any>;
   tech: React.MutableRefObject<any>;
   work: React.MutableRefObject<any>;
@@ -10,6 +11,7 @@ interface StoreState {
 }
 
 interface StoreActions extends StoreState {
+  setHome: (value: any) => void;
   setAbout: (value: any) => void;
   setTech: (value: any) => void;
   setWork: (value: any) => void;
@@ -20,6 +22,7 @@ interface StoreActions extends StoreState {
 }
 
 const useStore = create<StoreState & StoreActions>((set) => ({
+  home: { current: null },
   about: { current: null },
   tech: { current: null },
   work: { current: null },
@@ -27,6 +30,7 @@ const useStore = create<StoreState & StoreActions>((set) => ({
   gallery: { current: null },
   achievements: { current: null },
 
+  setHome: (value) => set((state) => ({ home: { current: value } })),
   setAbout: (value) => set((state) => ({ about: { current: value } })),
   setTech: (value) => set((state) => ({ tech: { current: value } })),
   setWork: (value) => set((state) => ({ work: { current: value } })),

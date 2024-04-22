@@ -13,35 +13,8 @@ import Footer from "./components/Footer";
 import useStore from "./store/store";
 
 function App() {
-  const {
-    about,
-    tech,
-    work,
-    project,
-    gallery,
-    achievements,
-    setAbout,
-    setTech,
-    setWork,
-    setProject,
-    setGallery,
-    setAchievements,
-  } = useStore();
-
-  // Function to move to a specific section
-  // const moveToSection = (sectionRef) => {
-  //   sectionRef.current.scrollIntoView({ behavior: "smooth" });
-  // };
-
-  // Example: Move to the 'About' section
-  // const handleAboutClick = () => {
-  //   moveToSection(aboutRef);
-  // };
-
-  // Example: Move to the 'Tech' section
-  // const handleTechClick = () => {
-  //   moveToSection(techRef);
-  // };
+  const { home, about, tech, work, project, gallery, achievements } =
+    useStore();
 
   return (
     <>
@@ -50,13 +23,15 @@ function App() {
           <Navbar />
         </nav>
         <header className="App-header">
-          <HeaderDisplay
-            name="Shubham"
-            designation="Software Developer"
-            emailId="shubham8969305655@gmail.com"
-            linkedinURL="https://www.linkedin.com/in/shubham-kumar-6aa852171/"
-            githubURL="https://github.com/ShubhamKumar3010"
-          />
+          <section ref={home}>
+            <HeaderDisplay
+              name="Shubham"
+              designation="Software Developer"
+              emailId="shubham8969305655@gmail.com"
+              linkedinURL="https://www.linkedin.com/in/shubham-kumar-6aa852171/"
+              githubURL="https://github.com/ShubhamKumar3010"
+            />
+          </section>
         </header>
         <section
           style={{

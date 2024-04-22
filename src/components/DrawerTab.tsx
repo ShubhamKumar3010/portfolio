@@ -10,14 +10,38 @@ import useStore from "../store/store";
 
 export default function DrawerTab() {
   const [open, setOpen] = React.useState(false);
-  const { about } = useStore();
+  const { home, about, tech, work, project, gallery, achievements } =
+    useStore();
 
   const moveToSection = (sectionRef: React.MutableRefObject<any>) => {
-    sectionRef.current.scrollIntoView({ behavior: "smooth" });
+    const yOffset = -70;
+    const y =
+      sectionRef.current.getBoundingClientRect().top +
+      window.pageYOffset +
+      yOffset;
+    window.scrollTo({ top: y, behavior: "smooth" });
   };
 
+  const handleHomeClick = () => {
+    moveToSection(home);
+  };
   const handleAboutClick = () => {
     moveToSection(about);
+  };
+  const handleTechClick = () => {
+    moveToSection(tech);
+  };
+  const handleWorkClick = () => {
+    moveToSection(work);
+  };
+  const handleProjectClick = () => {
+    moveToSection(project);
+  };
+  const handleGalleryClick = () => {
+    moveToSection(gallery);
+  };
+  const handleAchievementClick = () => {
+    moveToSection(achievements);
   };
   return (
     <React.Fragment>
@@ -50,7 +74,15 @@ export default function DrawerTab() {
             "& > div": { justifyContent: "center" },
           }}
         >
-          <ListItemButton sx={{ fontWeight: "lg" }}>Home</ListItemButton>
+          <ListItemButton
+            sx={{ fontWeight: "lg" }}
+            onClick={() => {
+              handleHomeClick();
+              setOpen(false);
+            }}
+          >
+            Home
+          </ListItemButton>
           <ListItemButton
             onClick={() => {
               handleAboutClick();
@@ -59,11 +91,46 @@ export default function DrawerTab() {
           >
             About Me
           </ListItemButton>
-          <ListItemButton>Technical Skills</ListItemButton>
-          <ListItemButton>Work Experience</ListItemButton>
-          <ListItemButton>College Projects</ListItemButton>
-          <ListItemButton>Project Glimpse</ListItemButton>
-          <ListItemButton>Achievements</ListItemButton>
+          <ListItemButton
+            onClick={() => {
+              handleTechClick();
+              setOpen(false);
+            }}
+          >
+            Technical Skills
+          </ListItemButton>
+          <ListItemButton
+            onClick={() => {
+              handleWorkClick();
+              setOpen(false);
+            }}
+          >
+            Work Experience
+          </ListItemButton>
+          <ListItemButton
+            onClick={() => {
+              handleProjectClick();
+              setOpen(false);
+            }}
+          >
+            College Projects
+          </ListItemButton>
+          <ListItemButton
+            onClick={() => {
+              handleGalleryClick();
+              setOpen(false);
+            }}
+          >
+            Project Glimpse
+          </ListItemButton>
+          <ListItemButton
+            onClick={() => {
+              handleAchievementClick();
+              setOpen(false);
+            }}
+          >
+            Achievements
+          </ListItemButton>
         </List>
       </Drawer>
     </React.Fragment>

@@ -12,7 +12,7 @@ body {
     line-height: 1.5;
 }
 
-a {
+p {
     color: #262626;
     text-decoration: none;
 }
@@ -54,12 +54,13 @@ ul {
     padding: 0 10px;
 }
 
-.main-nav ul li a {
+.main-nav ul li p {
     padding-bottom: 2px;
 }
 
-.main-nav ul li a:hover {
+.main-nav ul li p:hover {
     border-bottom: 2px solid #7c2bbf;
+    cursor: pointer;
 }
 
 .main-nav ul.main-menu {
