@@ -31,7 +31,7 @@ const Gallery: React.FC = () => {
             display: "flex",
           }}
         >
-          <Box>
+          <Box padding={5}>
             <ImageList variant="masonry" cols={isMobileView ? 2 : 4} gap={15}>
               {imageList.map((item) => (
                 <ImageListItem key={item + 1}>

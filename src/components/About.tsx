@@ -8,7 +8,12 @@ const About = () => {
   const aboutDesc =
     "Currently, I am working as a software developer at Infosys, specializing as a Specialist Programmer. I completed my B.Tech in Computer Science from JECRC University, Jaipur. I enjoy identifying problems around me that can be solved with softwares and love working on innovative ideas. My hobbies include watching and playing football, listening to music, and traveling.";
   return (
-    <Grid padding="15px" marginBottom="35px" gap="10px">
+    <Grid
+      paddingLeft={isMobileView ? "15px" : "200px"}
+      paddingRight={isMobileView ? "15px" : "200px"}
+      marginBottom="35px"
+      gap="10px"
+    >
       <div
         style={{
           fontSize: isMobileView ? "25px" : "60px",
