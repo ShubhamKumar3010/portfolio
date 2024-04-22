@@ -9,7 +9,7 @@
 .project-card-sm {
     max-width: 500px;
     padding: 2.5px;
-    border-radius: 8px;
+    border-radius: 30px;
     border: 2px solid grey;
     background-color: rgba(255, 255, 255, 0.15);
     position: relative;

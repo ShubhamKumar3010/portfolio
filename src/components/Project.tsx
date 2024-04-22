@@ -36,7 +36,8 @@ const Project: React.FC<ProjectProps> = ({
           </div>
           <Button
             variant="solid"
-            sx={{ color: "white", background: "#7c2bbf", marginTop: "15px" }}
+            sx={{ color: "white", background: "#00fff", marginTop: "15px" }}
+            style={{borderRadius:"300px"}}
             onClick={() => {
               window.open(
                 "https://www.youtube.com/watch?v=n8BI4MhLTfI",
