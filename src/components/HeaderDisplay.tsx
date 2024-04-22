@@ -49,7 +49,7 @@ const HeaderDisplay: React.FC<HeaderDisplayProps> = ({
           <Grid>
             <TypeAnimation
               sequence={[
-                `Hello, I'am ${name}`,
+                `Hello, I'm ${name}`,
                 "Nice To Meet  You..",
                 `Hello, I'am ${name}`,
               ]}
