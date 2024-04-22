@@ -51,7 +51,7 @@ const HeaderDisplay: React.FC<HeaderDisplayProps> = ({
               sequence={[
                 `Hello, I'm ${name}`,
                 "Nice To Meet  You..",
-                `Hello, I'am ${name}`,
+                `Hello, I'm ${name}`,
               ]}
               wrapper="span"
               speed={30}
