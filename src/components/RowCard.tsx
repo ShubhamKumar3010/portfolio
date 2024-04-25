@@ -29,10 +29,19 @@ const RowCard: React.FC<RowCardProps> = ({
         </AspectRatio>
       </CardOverflow>
       <CardContent>
-        <Typography fontWeight="md" textColor="success.plainColor">
+        <Typography
+          fontWeight="md"
+          textColor="success.plainColor"
+          fontFamily={"'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"}
+        >
           {line1Content}
         </Typography>
-        <Typography level="body-sm">{line2Content}</Typography>
+        <Typography
+          level="body-sm"
+          fontFamily={"'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"}
+        >
+          {line2Content}
+        </Typography>
       </CardContent>
       <CardOverflow
         variant="soft"
@@ -47,6 +56,7 @@ const RowCard: React.FC<RowCardProps> = ({
           textTransform: "uppercase",
           borderLeft: "1px solid",
           borderColor: "divider",
+          fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;",
         }}
       >
         {cardType}

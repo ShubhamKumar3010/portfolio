@@ -18,6 +18,7 @@ export default function AccordionDepthPanel() {
         [`& .${accordionSummaryClasses.button}:hover`]: {
           bgcolor: "transparent",
         },
+        fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
         [`& .${accordionDetailsClasses.content}`]: {
           boxShadow: (theme) => `inset 0 1px ${theme.vars.palette.divider}`,
           [`&.${accordionDetailsClasses.expanded}`]: {

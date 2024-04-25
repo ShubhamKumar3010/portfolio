@@ -52,6 +52,9 @@ function Footer() {
               }
             />
           }
+          style={{
+            fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+          }}
           label="Gmail"
           variant="outlined"
           onClick={() => {

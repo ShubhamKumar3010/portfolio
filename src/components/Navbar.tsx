@@ -48,6 +48,9 @@ function Navbar() {
                 }
               />
             }
+            sx={{
+              fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+            }}
             label="Shubham Kumar"
             variant="outlined"
           />

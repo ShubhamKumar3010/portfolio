@@ -11,7 +11,9 @@ const Skill = () => {
     border: "solid 2px black",
     margin: "10px",
     padding: "2px",
+    fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
   };
+  
   const theme = useTheme();
   const isMobileView = useMediaQuery(theme.breakpoints.down("sm" || "md"));
   return (
@@ -34,6 +36,8 @@ const Skill = () => {
         <Chip icon={<CssIcon />} sx={chipStyle} label="CSS" />
         <Chip icon={<CodeIcon />} sx={chipStyle} label="Tailwind CSS" />
         <Chip icon={<CodeIcon />} sx={chipStyle} label="React" />
+        <Chip icon={<CodeIcon />} sx={chipStyle} label="Redux" />
+        <Chip icon={<CodeIcon />} sx={chipStyle} label="Zustand" />
         <Chip icon={<CodeIcon />} sx={chipStyle} label="Mongo DB" />
         <Chip icon={<CodeIcon />} sx={chipStyle} label="NodeJs" />
         <Chip icon={<CodeIcon />} sx={chipStyle} label="ExpressJs" />

@@ -15,7 +15,7 @@ const ProjectCard: React.FC = () => {
             marginBottom: "30px",
           }}
         >
-          <b>C</b>ollege <b>Pro</b>jects
+          <b>P</b>ersonal <b>Pro</b>jects
         </div>
       </Grid>
       <div

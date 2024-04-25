@@ -61,7 +61,7 @@ const ExperienceCard: React.FC = () => {
                 }}
               >
                 <div>
-                  <p style={{ fontSize: "25px", fontFamily: "unset" }}>
+                  <p style={{ fontSize: "25px" }}>
                     <b>Infosys</b>
                   </p>
                 </div>
