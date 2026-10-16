@@ -23,7 +23,7 @@ function App() {
           <Navbar />
         </nav>
         <header className="App-header">
-          <section ref={home}>
+          <section className="hero-section" ref={home}>
             <HeaderDisplay
               name="Shubham"
               designation="Software Developer"
@@ -33,32 +33,27 @@ function App() {
             />
           </section>
         </header>
-        <section
-          style={{
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          <section ref={about}>
+        <main className="portfolio-content">
+          <section className="portfolio-section about-section" ref={about}>
             <About />
           </section>
-          <section ref={tech}>
+          <section className="portfolio-section skills-section" ref={tech}>
             <Skill />
           </section>
-          <section ref={work}>
+          <section className="portfolio-section experience-section" ref={work}>
             <ExperienceCard />
           </section>
-          <section ref={project}>
+          <section className="portfolio-section projects-section" ref={project}>
             <ProjectCard />
           </section>
-          <section ref={gallery}>
+          <section className="portfolio-section gallery-section" ref={gallery}>
             <Gallery />
           </section>
-          <section ref={achievements}>
+          <section className="portfolio-section achievements-section" ref={achievements}>
             <Achievements />
           </section>
-        </section>
-        <footer>
+        </main>
+        <footer className="portfolio-footer">
           <Footer />
         </footer>
         <FloatingButton />

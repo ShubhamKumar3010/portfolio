@@ -1,9 +1,4 @@
 import * as React from "react";
-import AspectRatio from "@mui/joy/AspectRatio";
-import Card from "@mui/joy/Card";
-import CardContent from "@mui/joy/CardContent";
-import CardOverflow from "@mui/joy/CardOverflow";
-import Typography from "@mui/joy/Typography";
 import BadgeIcon from "@mui/icons-material/Badge";
 import SchoolIcon from "@mui/icons-material/School";
 
@@ -17,51 +12,24 @@ const RowCard: React.FC<RowCardProps> = ({
   line1Content,
   line2Content,
 }) => {
+  const isExperience = cardType === "Exp.";
+
   return (
-    <Card
-      orientation="horizontal"
-      variant="outlined"
-      sx={{ width: 260, border: "solid 2px black" }}
+    <article
+      className={`profile-fact ${isExperience ? "profile-fact--experience" : "profile-fact--education"}`}
     >
-      <CardOverflow>
-        <AspectRatio ratio="1" sx={{ width: 90 }}>
-          {cardType === "Exp." ? <BadgeIcon /> : <SchoolIcon />}
-        </AspectRatio>
-      </CardOverflow>
-      <CardContent>
-        <Typography
-          fontWeight="md"
-          textColor="success.plainColor"
-          fontFamily={"'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"}
-        >
-          {line1Content}
-        </Typography>
-        <Typography
-          level="body-sm"
-          fontFamily={"'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"}
-        >
-          {line2Content}
-        </Typography>
-      </CardContent>
-      <CardOverflow
-        variant="soft"
-        color="neutral"
-        sx={{
-          px: 0.2,
-          writingMode: "vertical-rl",
-          justifyContent: "center",
-          fontSize: "xs",
-          fontWeight: "xl",
-          letterSpacing: "1px",
-          textTransform: "uppercase",
-          borderLeft: "1px solid",
-          borderColor: "divider",
-          fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;",
-        }}
-      >
-        {cardType}
-      </CardOverflow>
-    </Card>
+      <div className="profile-fact-icon">
+        {isExperience ? <BadgeIcon /> : <SchoolIcon />}
+      </div>
+      <div className="profile-fact-copy">
+        <span className="profile-fact-label">
+          {isExperience ? "Experience" : "Education"}
+        </span>
+        <strong>{line1Content}</strong>
+        <span>{line2Content}</span>
+      </div>
+      <span className="profile-fact-index">{isExperience ? "01" : "02"}</span>
+    </article>
   );
 };
 

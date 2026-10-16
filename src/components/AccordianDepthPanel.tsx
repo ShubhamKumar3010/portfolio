@@ -1,3 +1,4 @@
+import { useState } from "react";
 import AccordionGroup from "@mui/joy/AccordionGroup";
 import Accordion from "@mui/joy/Accordion";
 import AccordionDetails, {
@@ -8,12 +9,15 @@ import AccordionSummary, {
 } from "@mui/joy/AccordionSummary";
 
 export default function AccordionDepthPanel() {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
+
   return (
     <AccordionGroup
+      className="achievement-accordion"
       variant="outlined"
       transition="0.2s"
       sx={{
-        maxWidth: 400,
+        width: "100%",
         borderRadius: "lg",
         [`& .${accordionSummaryClasses.button}:hover`]: {
           bgcolor: "transparent",
@@ -27,8 +31,15 @@ export default function AccordionDepthPanel() {
         },
       }}
     >
-      <Accordion defaultExpanded>
-        <AccordionSummary>Smart Gaya</AccordionSummary>
+      <Accordion
+        expanded={expandedIndex === 0}
+        onChange={(_, expanded) => setExpandedIndex(expanded ? 0 : null)}
+      >
+        <AccordionSummary>
+          <span className="achievement-summary">
+            <span className="achievement-number">01</span> Smart Gaya
+          </span>
+        </AccordionSummary>
         <AccordionDetails variant="soft">
           <ul>
             <li>
@@ -44,16 +55,30 @@ export default function AccordionDepthPanel() {
           </ul>
         </AccordionDetails>
       </Accordion>
-      <Accordion>
-        <AccordionSummary>Smart India Hackathon 2020</AccordionSummary>
+      <Accordion
+        expanded={expandedIndex === 1}
+        onChange={(_, expanded) => setExpandedIndex(expanded ? 1 : null)}
+      >
+        <AccordionSummary>
+          <span className="achievement-summary">
+            <span className="achievement-number">02</span> Smart India Hackathon 2020
+          </span>
+        </AccordionSummary>
         <AccordionDetails variant="soft">
           <ul>
             <li>Prelims of Smart India Hackathon 2019(Runner Up).</li>
           </ul>
         </AccordionDetails>
       </Accordion>
-      <Accordion>
-        <AccordionSummary>Football</AccordionSummary>
+      <Accordion
+        expanded={expandedIndex === 2}
+        onChange={(_, expanded) => setExpandedIndex(expanded ? 2 : null)}
+      >
+        <AccordionSummary>
+          <span className="achievement-summary">
+            <span className="achievement-number">03</span> Football
+          </span>
+        </AccordionSummary>
         <AccordionDetails variant="soft">
           <ul>
             <li>Represented the School Football team at the State Level.</li>

@@ -5,7 +5,7 @@ import DrawerTab from "./DrawerTab";
 import useStore from "../store/store";
 function Navbar() {
   const theme = useTheme();
-  const isMobileView = useMediaQuery(theme.breakpoints.down("sm" || "md"));
+  const isMobileView = useMediaQuery(theme.breakpoints.down("md"));
   const { about, tech, work, project, gallery, achievements } = useStore();
 
   const moveToSection = (sectionRef: React.MutableRefObject<any>) => {
@@ -40,6 +40,7 @@ function Navbar() {
       <div className="container">
         <nav className="main-nav">
           <Chip
+            className="nav-brand"
             avatar={
               <Avatar
                 alt="Shubham"
@@ -56,22 +57,22 @@ function Navbar() {
           />
           <ul className="main-menu">
             <li>
-              <p onClick={handleAboutClick}>About Me</p>
+              <button onClick={handleAboutClick}>About Me</button>
             </li>
             <li>
-              <p onClick={handleTechClick}>Technical Skills</p>
+              <button onClick={handleTechClick}>Technical Skills</button>
             </li>
             <li>
-              <p onClick={handleWorkClick}>Work Experience</p>
+              <button onClick={handleWorkClick}>Work Experience</button>
             </li>
             <li>
-              <p onClick={handleProjectClick}>College Projects</p>
+              <button onClick={handleProjectClick}>Personal Projects</button>
             </li>
             <li>
-              <p onClick={handleGalleryClick}>Project Glimpse</p>
+              <button onClick={handleGalleryClick}>Project Glimpse</button>
             </li>
             <li>
-              <p onClick={handleAchievementClick}>Achievements</p>
+              <button onClick={handleAchievementClick}>Achievements</button>
             </li>
           </ul>
 

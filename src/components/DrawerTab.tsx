@@ -1,5 +1,4 @@
 import * as React from "react";
-import Box from "@mui/joy/Box";
 import IconButton from "@mui/joy/IconButton";
 import Drawer from "@mui/joy/Drawer";
 import List from "@mui/joy/List";
@@ -46,90 +45,118 @@ export default function DrawerTab() {
   return (
     <React.Fragment>
       <IconButton
+        className="spatial-menu-trigger"
         variant="outlined"
         color="neutral"
+        aria-label="Open navigation menu"
+        aria-expanded={open}
+        aria-controls="portfolio-navigation-drawer"
         onClick={() => setOpen(true)}
       >
         <Menu />
       </IconButton>
-      <Drawer open={open} onClose={() => setOpen(false)}>
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            gap: 0.5,
-            ml: "auto",
-            mt: 1,
-            mr: 2,
-          }}
-        >
-          <ModalClose id="close-icon" sx={{ position: "initial" }} />
-        </Box>
+      <Drawer
+        id="portfolio-navigation-drawer"
+        className="spatial-drawer"
+        open={open}
+        onClose={() => setOpen(false)}
+      >
+        <div className="spatial-drawer-header">
+          <span className="spatial-drawer-monogram">SK</span>
+          <span className="spatial-drawer-title">
+            <small>PORTFOLIO / NAVIGATION</small>
+            <strong>Shubham Kumar</strong>
+          </span>
+          <ModalClose
+            className="spatial-drawer-close"
+            aria-label="Close navigation menu"
+            sx={{ position: "initial" }}
+          />
+        </div>
+        <div className="spatial-drawer-label">
+          <span>EXPLORE</span>
+          <span>07 SECTIONS</span>
+        </div>
         <List
+          className="spatial-drawer-list"
           size="lg"
           component="nav"
+          aria-label="Portfolio sections"
           sx={{
             flex: "none",
-            fontSize: "xl",
-            "& > div": { justifyContent: "center" },
+            fontSize: "lg",
           }}
         >
           <ListItemButton
+            className="spatial-drawer-item"
             sx={{ fontWeight: "lg" }}
             onClick={() => {
               handleHomeClick();
               setOpen(false);
             }}
           >
-            Home
+            <span className="spatial-drawer-index">01</span>
+            <span>Home</span>
           </ListItemButton>
           <ListItemButton
+            className="spatial-drawer-item"
             onClick={() => {
               handleAboutClick();
               setOpen(false);
             }}
           >
-            About Me
+            <span className="spatial-drawer-index">02</span>
+            <span>About Me</span>
           </ListItemButton>
           <ListItemButton
+            className="spatial-drawer-item"
             onClick={() => {
               handleTechClick();
               setOpen(false);
             }}
           >
-            Technical Skills
+            <span className="spatial-drawer-index">03</span>
+            <span>Technical Skills</span>
           </ListItemButton>
           <ListItemButton
+            className="spatial-drawer-item"
             onClick={() => {
               handleWorkClick();
               setOpen(false);
             }}
           >
-            Work Experience
+            <span className="spatial-drawer-index">04</span>
+            <span>Work Experience</span>
           </ListItemButton>
           <ListItemButton
+            className="spatial-drawer-item"
             onClick={() => {
               handleProjectClick();
               setOpen(false);
             }}
           >
-            College Projects
+            <span className="spatial-drawer-index">05</span>
+            <span>Personal Projects</span>
           </ListItemButton>
           <ListItemButton
+            className="spatial-drawer-item"
             onClick={() => {
               handleGalleryClick();
               setOpen(false);
             }}
           >
-            Project Glimpse
+            <span className="spatial-drawer-index">06</span>
+            <span>Project Glimpse</span>
           </ListItemButton>
           <ListItemButton
+            className="spatial-drawer-item"
             onClick={() => {
               handleAchievementClick();
               setOpen(false);
             }}
           >
-            Achievements
+            <span className="spatial-drawer-index">07</span>
+            <span>Achievements</span>
           </ListItemButton>
         </List>
       </Drawer>

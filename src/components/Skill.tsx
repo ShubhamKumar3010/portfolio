@@ -28,19 +28,27 @@ const Skill = () => {
         <b>Tech</b>nical <b>S</b>kills
       </div>
       <div>
-        <Chip icon={<CodeIcon />} sx={chipStyle} label="C" />
-        <Chip icon={<CodeIcon />} sx={chipStyle} label="C++" />
+        <Chip icon={<CodeIcon />} sx={chipStyle} label="React" />
         <Chip icon={<JavascriptIcon />} sx={chipStyle} label="JavaScript" />
         <Chip icon={<DataObjectIcon />} sx={chipStyle} label="TypeScript" />
+        <Chip icon={<CodeIcon />} sx={chipStyle} label="Node.js" />
+        <Chip icon={<CodeIcon />} sx={chipStyle} label="Express.js" />
+        <Chip icon={<CodeIcon />} sx={chipStyle} label="MongoDB" />
         <Chip icon={<HtmlIcon />} sx={chipStyle} label="HTML" />
         <Chip icon={<CssIcon />} sx={chipStyle} label="CSS" />
         <Chip icon={<CodeIcon />} sx={chipStyle} label="Tailwind CSS" />
-        <Chip icon={<CodeIcon />} sx={chipStyle} label="React" />
         <Chip icon={<CodeIcon />} sx={chipStyle} label="Redux" />
         <Chip icon={<CodeIcon />} sx={chipStyle} label="Zustand" />
-        <Chip icon={<CodeIcon />} sx={chipStyle} label="Mongo DB" />
-        <Chip icon={<CodeIcon />} sx={chipStyle} label="NodeJs" />
-        <Chip icon={<CodeIcon />} sx={chipStyle} label="ExpressJs" />
+        <Chip icon={<CodeIcon />} sx={chipStyle} label="Firebase" />
+        <Chip icon={<CodeIcon />} sx={chipStyle} label="Postman" />
+        <Chip icon={<CodeIcon />} sx={chipStyle} label="AWS" />
+        <Chip icon={<CodeIcon />} sx={chipStyle} label="Azure DevOps" />
+        <Chip icon={<CodeIcon />} sx={chipStyle} label="Kibana" />
+        <Chip icon={<CodeIcon />} sx={chipStyle} label="GitHub Copilot" />
+        <Chip icon={<CodeIcon />} sx={chipStyle} label="Java" />
+        <Chip icon={<CodeIcon />} sx={chipStyle} label="Python" />
+        <Chip icon={<CodeIcon />} sx={chipStyle} label="C" />
+        <Chip icon={<CodeIcon />} sx={chipStyle} label="C++" />
       </div>
     </Grid>
   );

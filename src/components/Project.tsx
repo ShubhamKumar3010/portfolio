@@ -1,6 +1,4 @@
 import React from "react";
-import "./Project.css";
-import Button from "@mui/joy/Button";
 import smargGaya from "../assets/smartGaya5.jpg";
 import matangi from "../assets/matangi.png";
 import hotelMb from "../assets/hotelMb.png";
@@ -15,44 +13,54 @@ const Project: React.FC<ProjectProps> = ({
   projectDesc,
   projectDate,
 }) => {
+  const projectTitle = projectName.replace(/\s*\([^)]*\)/, "");
+  const projectType = projectName.match(/\(([^)]*)\)/)?.[1] || "Project";
+  const projectPeriod = projectDate.replace(/[()]/g, "");
+  const projectNumber = projectTitle.startsWith("Hotel")
+    ? "01"
+    : projectTitle === "Smart Gaya"
+    ? "02"
+    : "03";
+  const projectVisual = projectTitle.startsWith("Hotel")
+    ? "hotel"
+    : projectTitle === "Smart Gaya"
+    ? "smart-gaya"
+    : "matangi";
+  const projectImage =
+    projectTitle === "Smart Gaya"
+      ? smargGaya
+      : projectTitle === "Matangi"
+      ? matangi
+      : hotelMb;
+
   return (
-    <div className="project-card-sm">
-      <div className="card-border-gradient"></div>
-      <div className="card-container">
-        <img
-          src={
-            projectName === "Smart Gaya (Android Project)"
-              ? smargGaya
-              : projectName === "Matangi (Android Project)"
-              ? matangi
-              : hotelMb
-          }
-          alt=""
-        />
-        <div className="wrapper">
-          <div>
-            <h1>{projectName}</h1> <h5> {projectDate}</h5>
-            <p>{projectDesc}</p>
-          </div>
-          <Button
-            variant="solid"
-            sx={{ color: "white", background: "#7c2bbf", marginTop: "15px" }}
-            style={{ borderRadius: "300px", padding: "6px 16px 6px 16px" }}
-            onClick={() => {
-              window.open(
-                "https://www.youtube.com/watch?v=n8BI4MhLTfI",
-                "_blank"
-              );
-            }}
-            disabled={
-              projectName === "Smart Gaya (Android Project)" ? false : true
-            }
-          >
-            View Project
-          </Button>
-        </div>
+    <article className="project-card">
+      <div className={`project-card-art project-card-art--${projectVisual}`}>
+        <img src={projectImage} alt={`${projectTitle} project preview`} loading="lazy" />
+        <span className="project-card-index">{projectNumber}</span>
+        <span className="project-card-type">{projectType}</span>
       </div>
-    </div>
+      <div className="project-card-content">
+        <div className="project-card-meta">
+          <span>SELECTED WORK</span>
+          <time>{projectPeriod}</time>
+        </div>
+        <h3>{projectTitle}</h3>
+        <p>{projectDesc}</p>
+        {projectTitle === "Smart Gaya" ? (
+          <a
+            className="project-card-link"
+            href="https://www.youtube.com/watch?v=n8BI4MhLTfI"
+            target="_blank"
+            rel="noreferrer"
+          >
+            View project <span aria-hidden="true">↗</span>
+          </a>
+        ) : (
+          <span className="project-card-archive">Project archive <span aria-hidden="true">↗</span></span>
+        )}
+      </div>
+    </article>
   );
 };
 

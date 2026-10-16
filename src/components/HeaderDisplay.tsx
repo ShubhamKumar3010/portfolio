@@ -1,12 +1,7 @@
-import Grid from "@mui/material/Grid";
 import HomeLogo from "../assets/homeLogo.svg";
-import EmailIcon from "@mui/icons-material/Email";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import { useState } from "react";
 import { TypeAnimation } from "react-type-animation";
-import { useTheme } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
 
 type HeaderDisplayProps = {
   name: string;
@@ -17,121 +12,55 @@ type HeaderDisplayProps = {
 };
 const HeaderDisplay: React.FC<HeaderDisplayProps> = ({
   name,
+  designation,
   emailId,
   linkedinURL,
   githubURL,
 }) => {
-  const [mailHovered, setMailHovered] = useState<boolean>(false);
-  const [linkedinHovered, setLinkedinHovered] = useState<boolean>(false);
-  const [githubHovered, setGithubHovered] = useState<boolean>(false);
-  const theme = useTheme();
-  const isMobileView = useMediaQuery(theme.breakpoints.down("sm" || "md"));
-
   return (
-    <>
-      <Grid
-        container
-        display={"flex"}
-        flexDirection={isMobileView ? "column" : "row"}
-        flexGrow={1}
-        alignItems="center"
-        justifyContent="center"
-        marginTop="70px"
-      >
-        <Grid
-          padding={isMobileView ? "30px" : "15px"}
-          item={true}
-          xs={6}
-          display={"flex"}
-          flexDirection="column"
-          fontSize={isMobileView ? "25px" : "50px"}
-        >
-          <Grid>
-            <TypeAnimation
-              sequence={[
-                `Hello, I'm ${name}`,
-                "Nice To Meet  You..",
-                `Hello, I'm ${name}`,
-              ]}
-              wrapper="span"
-              speed={30}
-            />
-          </Grid>
-          <Grid>
-            <div>
-              <b>S</b>oftware <b>Dev</b>eloper
-            </div>
-          </Grid>
-          <Grid>
-            <EmailIcon
-              sx={{
-                color: mailHovered ? "#000" : "#514F4F",
-                cursor: mailHovered ? "pointer" : "",
-                height: isMobileView ? "50px" : "100px",
-                width: isMobileView ? "50px" : "100px",
-                transition: "color 0.3s",
-                "&:hover": {
-                  transform: "scale(1.5)",
-                },
-                padding: "6px",
-              }}
-              onMouseOver={() => setMailHovered(true)}
-              onMouseOut={() => setMailHovered(false)}
-              onClick={() => {
-                window.open(`mailto:${emailId}`, "_blank");
-              }}
-            />
-            <LinkedInIcon
-              fontSize="large"
-              sx={{
-                color: linkedinHovered ? "#000" : "#514F4F",
-                cursor: linkedinHovered ? "pointer" : "",
-                height: isMobileView ? "50px" : "100px",
-                width: isMobileView ? "50px" : "100px",
-                transition: "color 0.3s",
-                "&:hover": {
-                  transform: "scale(1.5)",
-                },
-                padding: "6px",
-              }}
-              onMouseOver={() => setLinkedinHovered(true)}
-              onMouseOut={() => setLinkedinHovered(false)}
-              onClick={() => {
-                window.open(linkedinURL, "_blank");
-              }}
-            />
-            <GitHubIcon
-              fontSize="large"
-              sx={{
-                color: githubHovered ? "#000" : "#514F4F",
-                cursor: githubHovered ? "pointer" : "",
-                height: isMobileView ? "50px" : "100px",
-                width: isMobileView ? "50px" : "100px",
-                transition: "color 0.3s",
-                "&:hover": {
-                  transform: "scale(1.5)",
-                },
-                padding: "6px",
-              }}
-              onMouseOver={() => setGithubHovered(true)}
-              onMouseOut={() => setGithubHovered(false)}
-              onClick={() => {
-                window.open(githubURL, "_blank");
-              }}
-            />
-          </Grid>
-        </Grid>
-
-        <Grid item={true} xs={6}>
-          <img
-            src={HomeLogo}
-            height={isMobileView ? "150px" : "200px"}
-            width={isMobileView ? "250px" : "300px"}
-            alt="home-logo"
+    <div className="hero-content">
+      <div className="hero-copy">
+        <div className="hero-kicker"><span /> Available for meaningful work</div>
+        <p className="hero-greeting">Hello, I’m</p>
+        <h1>
+          <TypeAnimation
+            sequence={[` ${name}`, 1400, " a software developer", 1600]}
+            wrapper="span"
+            speed={60}
+            deletionSpeed={60}
+            repeat={Infinity}
           />
-        </Grid>
-      </Grid>
-    </>
+          <span className="hero-period">.</span>
+        </h1>
+        <p className="hero-designation">{designation}</p>
+        <p className="hero-summary">
+          4+ years of experience building React frontends, developing full-stack
+          MERN applications, and working with Java.
+        </p>
+        <div className="hero-actions">
+          <a className="hero-contact" href={`mailto:${emailId}`}>
+            Let’s talk <span aria-hidden="true">↗</span>
+          </a>
+          <div className="hero-socials" aria-label="Social links">
+            <a href={linkedinURL} target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <LinkedInIcon />
+            </a>
+            <a href={githubURL} target="_blank" rel="noreferrer" aria-label="GitHub">
+              <GitHubIcon />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className="hero-visual" aria-label="Abstract software developer illustration">
+        <div className="hero-orbit hero-orbit-one" />
+        <div className="hero-orbit hero-orbit-two" />
+        <div className="hero-visual-core">
+          <img src={HomeLogo} alt="" />
+        </div>
+        <div className="hero-coordinate">26° 54′ N<br />75° 47′ E</div>
+        <div className="hero-visual-label"><span>01</span> Bangalore, India</div>
+      </div>
+    </div>
   );
 };
 
